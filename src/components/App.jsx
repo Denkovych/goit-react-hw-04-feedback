@@ -33,7 +33,7 @@ function App() {
       countTotalFeedback() ? (good * 100) / countTotalFeedback() : 0
     )}%`;
   };
-
+const totalFeedback = countTotalFeedback();
   return (
     <div>
       <Section title="Please leave feedback">
@@ -43,12 +43,12 @@ function App() {
         />
       </Section>
       <Section title="Statistics">
-        {countTotalFeedback() ? (
+        {totalFeedback ? (
           <Statistics
             good={good}
             neutral={neutral}
             bad={bad}
-            total={countTotalFeedback()}
+            total={totalFeedback}
             positivePercentage={countPositiveFeedbackPercentage()}
           />
         ) : (
